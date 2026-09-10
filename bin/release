@@ -4,5 +4,5 @@
 cat <<EOF
 ---
 default_process_types:
-  web: julia --project=$(pwd) web/WebSocket.jl $PORT
+  web: julia --project=$(pwd)/deploy/runtime -O1 --heap-size-hint=350M deploy/WebSocket.jl $PORT
 EOF
